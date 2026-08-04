@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Escolar de Robotica</title>
+</head>
+<body>
+    HTML
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Robótica & Física e Tecnociência</title>
+    <style>
+        /* Reset e Estilos Globais */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: #1e293b;
+            color: #ffffff;
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+
+        /* Barra de Navegação */
+        nav {
+            background-color: #0f172a;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 6px 16px;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #334155;
+            color: #38bdf8;
+        }
+
+        /* Container Principal */
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Seções */
+        .section {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .section h2 {
+            color: #0f172a;
+            font-size: 1.8rem;
+            border-bottom: 3px solid #2563eb;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .section p.descricao {
+            color: #64748b;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Grid de Fotos */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Cartão do Projeto */
+        .card {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #f8fafc;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Imagens */
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Caixas Cinzas de Espaço para Foto (Placeholder) */
+        .foto-placeholder {
+            width: 100%;
+            height: 220px;
+            background-color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #475569;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .card-body {
+            padding: 1.2rem;
+        }
+
+        .card-body h3 {
+            font-size: 1.2rem;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-body p {
+            font-size: 0.95rem;
+            color: #64748b;
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #1e293b;
+            color: #94a3b8;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Nosso Portfólio de Projetos</h1>
+        <p>Trabalhos práticos de Robótica, Física e Tecnociência</p>
+    </header>
+
+    <nav>
+        <a href="#robotica">Robótica</a>
+        <a href="#fisica-tecnociencia">Física e Tecnociência</a>
+    </nav>
+
+    <div class="container">
+
+        <section id="robotica" class="section">
+            <h2>Robótica</h2>
+            <p class="descricao">Confira nossos projetos, montagens e protótipos na área de robótica.</p>
+
+            <div class="gallery">
+                <div class="card">
+                    <div class="foto-placeholder">[ Insira a Foto 1 Aqui ]</div>
+                    <div class="card-body">
+                        <h3>Projeto Robótica 1</h3>
+                        <p>Escreva aqui uma breve descrição sobre este trabalho de robótica.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="foto-placeholder">[ Insira a Foto 2 Aqui ]</div>
+                    <div class="card-body">
+                        <h3>Projeto Robótica 2</h3>
+                        <p>Escreva aqui uma breve descrição sobre este trabalho de robótica.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="foto-placeholder">[ Insira a Foto 3 Aqui ]</div>
+                    <div class="card-body">
+                        <h3>Projeto Robótica 3</h3>
+                        <p>Escreva aqui uma breve descrição sobre este trabalho de robótica.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="fisica-tecnociencia" class="section">
+            <h2>Física e Tecnociência</h2>
+            <p class="descricao">Experimentos práticos, maquetes e conceitos demonstrados na prática.</p>
+
+            <div class="gallery">
+                <div class="card">
+                    <div class="foto-placeholder">[ Insira a Foto 1 Aqui ]</div>
+                    <div class="card-body">
+                        <h3>Experimento 1</h3>
+                        <p>Escreva aqui uma breve descrição sobre o experimento de física.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="foto-placeholder">[ Insira a Foto 2 Aqui ]</div>
+                    <div class="card-body">
+                        <h3>Experimento 2</h3>
+                        <p>Escreva aqui uma breve descrição sobre o experimento de física.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="foto-placeholder">[ Insira a Foto 3 Aqui ]</div>
+                    <div class="card-body">
+                        <h3>Experimento 3</h3>
+                        <p>Escreva aqui uma breve descrição sobre o experimento de física.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; Portfólio do Grupo - Robótica, Física e Tecnociência</p>
+    </footer>
+
+</body>
+</html>
+</body>
+</html>
