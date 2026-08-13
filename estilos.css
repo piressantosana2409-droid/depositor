@@ -24,12 +24,18 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: rgb(245, 215, 227);
 }
 
 main {
     flex: 1;
 }
 
-.cbecalho-link{
+.cabecalho-link{
     color:rgb(238, 117, 222);
+    text-decoration: rgb(255, 29, 104);
+}
+
+h1{
+    color:rgb(250, 172, 211);
 }
