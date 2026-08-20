@@ -1,0 +1,631 @@
+/* =========================================================
+   ROBÓTICA & A FÍSICA DA LUZ — Colégio Estadual de Marmeleiro
+   styles.css
+   ========================================================= */
+
+/* ---------- Fontes ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+/* ---------- Paleta (tons de rosa) ---------- */
+:root {
+    --rosa-800: #7a1854;   /* cabeçalho, rodapé, títulos fortes */
+    --rosa-600: #c22a7c;   /* links, bordas ativas, destaques */
+    --rosa-500: #e0448c;   /* botões, acento principal */
+    --rosa-300: #ff8fc4;   /* glow, ícones, hover */
+    --rosa-150: #ffd6ea;   /* bordas suaves */
+    --rosa-100: #ffe9f4;   /* fundo de cards */
+    --rosa-50:  #fff6fb;   /* fundo da página */
+    --glow: #ff2f96;       /* sombra neon */
+
+    --ink: #3a0d28;        /* texto principal */
+    --ink-soft: #8a5d78;   /* texto secundário */
+    --white: #ffffff;
+
+    --fonte-display: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif;
+    --fonte-corpo: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    --fonte-mono: 'IBM Plex Mono', 'Courier New', monospace;
+}
+
+/* ---------- Reset ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fonte-corpo);
+    background-color: var(--rosa-50);
+    color: var(--ink);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+}
+
+img, video {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+:focus-visible {
+    outline: 3px solid var(--rosa-600);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ---------- Layout base ---------- */
+.wrap {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+section {
+    padding: 110px 0 70px;
+}
+
+.eyebrow {
+    display: inline-block;
+    font-family: var(--fonte-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--rosa-600);
+    background: var(--rosa-100);
+    border: 1px solid var(--rosa-150);
+    padding: 5px 12px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+}
+
+.section-heading {
+    font-family: var(--fonte-display);
+    font-weight: 700;
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    color: var(--rosa-800);
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+}
+
+.section-lede {
+    max-width: 760px;
+    font-size: 1.08rem;
+    color: var(--ink);
+}
+
+.section-lede + .section-lede {
+    margin-top: 12px;
+}
+
+hr.divisor {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--rosa-150) 20%, var(--rosa-150) 80%, transparent);
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+header {
+    background-color: var(--rosa-800);
+    color: var(--white);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(122, 24, 84, 0.25);
+}
+
+.nav-container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 18px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-family: var(--fonte-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.logo span {
+    color: var(--rosa-300);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background: var(--rosa-300);
+    transition: width 0.25s ease;
+}
+
+nav a:hover::after,
+nav a:focus-visible::after {
+    width: 100%;
+}
+
+/* =========================================================
+   HERO / INÍCIO — textura de protoboard + LED pulsando
+   ========================================================= */
+#inicio {
+    padding-top: 150px;
+    padding-bottom: 90px;
+    position: relative;
+    background-color: var(--rosa-50);
+    background-image:
+        radial-gradient(var(--rosa-150) 1.4px, transparent 1.4px);
+    background-size: 26px 26px;
+    background-position: -8px -8px;
+    overflow: hidden;
+}
+
+#inicio::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255,246,251,0) 0%, var(--rosa-50) 92%);
+    pointer-events: none;
+}
+
+.hero-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--fonte-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--rosa-600);
+    background: var(--white);
+    border: 1px solid var(--rosa-150);
+    padding: 7px 14px 7px 10px;
+    border-radius: 999px;
+    margin-bottom: 26px;
+}
+
+.led-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--glow);
+    box-shadow: 0 0 0 0 rgba(255, 47, 150, 0.6);
+    animation: piscar 1.6s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
+@keyframes piscar {
+    0%, 100% {
+        opacity: 1;
+        box-shadow: 0 0 8px 2px rgba(255, 47, 150, 0.55);
+    }
+    50% {
+        opacity: 0.25;
+        box-shadow: 0 0 0 0 rgba(255, 47, 150, 0);
+    }
+}
+
+.hero-inner h1 {
+    font-family: var(--fonte-display);
+    font-weight: 700;
+    font-size: clamp(2.4rem, 6vw, 3.8rem);
+    color: var(--rosa-800);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    max-width: 850px;
+    margin-bottom: 28px;
+}
+
+.hero-inner h1 em {
+    font-style: normal;
+    color: var(--rosa-500);
+}
+
+.hero-lede {
+    max-width: 700px;
+    font-size: 1.12rem;
+    color: var(--ink);
+    margin-bottom: 16px;
+}
+
+.hero-lede-2 {
+    max-width: 700px;
+    font-size: 1.12rem;
+    color: var(--ink-soft);
+    margin-bottom: 36px;
+}
+
+.hero-ctas {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    font-family: var(--fonte-corpo);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    padding: 13px 24px;
+    border-radius: 10px;
+    display: inline-block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    border: 1.5px solid transparent;
+}
+
+.btn-primario {
+    background: var(--rosa-500);
+    color: var(--white);
+    box-shadow: 0 6px 18px rgba(224, 68, 140, 0.35);
+}
+
+.btn-primario:hover {
+    background: var(--rosa-600);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(224, 68, 140, 0.4);
+}
+
+.btn-secundario {
+    background: transparent;
+    color: var(--rosa-800);
+    border-color: var(--rosa-300);
+}
+
+.btn-secundario:hover {
+    background: var(--rosa-100);
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   ROBÓTICA — cards estilo "datasheet"
+   ========================================================= */
+#robotica {
+    background: var(--white);
+}
+
+.projetos {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+
+.projeto {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.projeto:nth-child(even) .projeto-midia {
+    order: 2;
+}
+
+.projeto:nth-child(even) .projeto-texto {
+    order: 1;
+}
+
+.projeto-ref {
+    font-family: var(--fonte-mono);
+    font-size: 0.78rem;
+    color: var(--rosa-600);
+    letter-spacing: 0.08em;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.projeto-texto h3 {
+    font-family: var(--fonte-display);
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: var(--rosa-800);
+    margin-bottom: 14px;
+}
+
+.projeto-texto p {
+    color: var(--ink);
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.componentes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.componentes span {
+    font-family: var(--fonte-mono);
+    font-size: 0.76rem;
+    color: var(--rosa-800);
+    background: var(--rosa-100);
+    border: 1px dashed var(--rosa-300);
+    padding: 5px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+/* "tela" do vídeo, tipo bezel de dispositivo */
+.projeto-midia {
+    background: var(--ink);
+    border-radius: 18px;
+    padding: 10px;
+    box-shadow: 0 18px 40px rgba(122, 24, 84, 0.18);
+    border: 1px solid var(--rosa-800);
+    transition: box-shadow 0.3s ease;
+}
+
+.projeto-midia:hover {
+    box-shadow: 0 20px 46px rgba(255, 47, 150, 0.3);
+}
+
+.tela {
+    position: relative;
+    width: 100%;
+    height: 360px;
+    border-radius: 11px;
+    overflow: hidden;
+    background: radial-gradient(circle at 50% 40%, #4a123a 0%, #200814 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tela video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* =========================================================
+   FÍSICA E TECNOCIÊNCIA — cards interativos
+   ========================================================= */
+#fisica {
+    background: var(--rosa-50);
+    background-image: radial-gradient(var(--rosa-150) 1.4px, transparent 1.4px);
+    background-size: 26px 26px;
+}
+
+.temas-grid {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.tema-card {
+    background: var(--white);
+    border: 1px solid var(--rosa-150);
+    border-radius: 16px;
+    padding: 26px;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.tema-card:hover {
+    border-color: var(--rosa-300);
+    box-shadow: 0 14px 30px rgba(224, 68, 140, 0.14);
+    transform: translateY(-3px);
+}
+
+.tema-icone {
+    width: 42px;
+    height: 42px;
+    color: var(--rosa-500);
+    margin-bottom: 16px;
+}
+
+.tema-icone svg {
+    width: 100%;
+    height: 100%;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.tema-toggle {
+    all: unset;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    width: 100%;
+}
+
+.tema-toggle h3 {
+    font-family: var(--fonte-display);
+    font-weight: 600;
+    font-size: 1.12rem;
+    color: var(--rosa-800);
+    line-height: 1.35;
+}
+
+.tema-plus {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 1.5px solid var(--rosa-300);
+    color: var(--rosa-600);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--fonte-mono);
+    font-size: 1rem;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.tema-card.aberto .tema-plus {
+    transform: rotate(135deg);
+    background: var(--rosa-500);
+    color: var(--white);
+    border-color: var(--rosa-500);
+}
+
+.tema-conteudo {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.35s ease;
+}
+
+.tema-card.aberto .tema-conteudo {
+    grid-template-rows: 1fr;
+}
+
+.tema-conteudo-inner {
+    overflow: hidden;
+}
+
+.tema-card p.tema-texto {
+    padding-top: 14px;
+    color: var(--ink-soft);
+    font-size: 0.96rem;
+}
+
+.tema-label {
+    font-family: var(--fonte-mono);
+    font-size: 0.72rem;
+    color: var(--rosa-300);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
+footer {
+    background-color: var(--rosa-800);
+    color: var(--white);
+    text-align: center;
+    padding: 46px 20px 34px;
+}
+
+footer p.footer-titulo {
+    font-family: var(--fonte-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--rosa-300);
+}
+
+.integrantes-lista {
+    list-style: none;
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.integrantes-lista li {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 143, 196, 0.3);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.88rem;
+}
+
+footer .copy {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.82rem;
+    margin-top: 10px;
+}
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+@media (max-width: 860px) {
+    .projeto,
+    .projeto:nth-child(even) .projeto-midia,
+    .projeto:nth-child(even) .projeto-texto {
+        order: initial;
+    }
+    .projeto {
+        grid-template-columns: 1fr;
+        gap: 26px;
+    }
+    .tela {
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 14px;
+        padding: 16px 20px;
+    }
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 18px;
+    }
+    #inicio {
+        padding-top: 175px;
+    }
+    section {
+        padding: 80px 0 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tela {
+        height: 240px;
+    }
+    .hero-ctas {
+        flex-direction: column;
+    }
+    .btn {
+        text-align: center;
+    }
+}

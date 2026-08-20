@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robótica & a Física da Luz | Colégio Estadual de Marmeleiro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <h1>Colégio <span>Estadual de Marmeleiro</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#robotica">Robótica</a></li>
+                    <li><a href="#fisica">Física e Tecnociência</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ================= INÍCIO ================= -->
+        <section id="inicio">
+            <div class="hero-inner">
+                <span class="hero-kicker"><span class="led-dot"></span> primeiro programa que rodamos: blink()</span>
+
+                <h1>Robótica e a <em>física da luz</em></h1>
+
+                <p class="hero-lede">Esse site reúne os projetos de robótica que fizemos em sala com uma placa Arduino e alguns componentes simples — nada muito profissional, só a gente testando fiação, errando bastante e comemorando toda vez que um LED acendia do jeito certo.</p>
+
+                <p class="hero-lede-2">Junto com os projetos, trouxemos também o que aprendemos na matéria de Física e Tecnociência, que no fim das contas explica boa parte do que a gente estava fazendo sem perceber: quase tudo aqui é sobre luz.</p>
+
+                <div class="hero-ctas">
+                    <a href="#robotica" class="btn btn-primario">Ver os projetos</a>
+                    <a href="#fisica" class="btn btn-secundario">Ver a pesquisa</a>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divisor">
+
+        <!-- ================= ROBÓTICA ================= -->
+        <section id="robotica">
+            <div class="wrap">
+                <span class="eyebrow">Robótica</span>
+                <h2 class="section-heading">Cinco circuitos, um Arduino só</h2>
+                <p class="section-lede">Os projetos abaixo foram feitos em sala com o kit básico: Arduino Uno, protoboard, jumpers, alguns LEDs, resistores e um potenciômetro. A ideia nunca foi construir robôs complicados — era entender, na prática, como um código simples consegue controlar luz, tempo e cor em tempo real. Cada vídeo abaixo é o circuito funcionando de verdade, sem edição (só sem áudio mesmo).</p>
+
+                <div class="projetos">
+
+                    <!-- Projeto 1: Disco de Newton -->
+                    <article class="projeto">
+                        <div class="projeto-midia">
+                            <div class="tela">
+                                <video src="videos/disco-newton.mp4" poster="videos/posters/disco-newton.jpg" controls muted loop playsinline preload="metadata"></video>
+                            </div>
+                        </div>
+                        <div class="projeto-texto">
+                            <span class="projeto-ref">REF. 01 / DISCO DE NEWTON</span>
+                            <h3>Disco de Newton</h3>
+                            <p>Um disco pintado com as cores do espectro gira rápido o suficiente para as cores se misturarem aos nossos olhos, mostrando que a luz branca é, na real, a soma de várias cores. A velocidade do giro é controlada por um potenciômetro ligado a um pequeno motor (confesso que nem lembramos o nome exato do modelo, mas é ele quem gira o disco).</p>
+                            <div class="componentes">
+                                <span>Arduino Uno</span>
+                                <span>Motor</span>
+                                <span>Potenciômetro</span>
+                                <span>Protoboard</span>
+                                <span>Jumpers</span>
+                                <span>Disco pintado à mão</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Projeto 2: Fade In e Fade Out -->
+                    <article class="projeto">
+                        <div class="projeto-midia">
+                            <div class="tela">
+                                <video src="videos/fade-in-fade-out.mp4" poster="videos/posters/fade-in-fade-out.jpg" controls muted loop playsinline preload="metadata"></video>
+                            </div>
+                        </div>
+                        <div class="projeto-texto">
+                            <span class="projeto-ref">REF. 02 / FADE IN &amp; FADE OUT</span>
+                            <h3>Fade In e Fade Out</h3>
+                            <p>Programamos três LEDs para acender e apagar aos poucos, em vez de simplesmente ligar e desligar. No <em>fade in</em>, o LED começa apagado e a luz vai aumentando devagar; no <em>fade out</em>, é o contrário. Pensamos nisso como um corredor de acessibilidade: uma iluminação que ajuda pessoas com baixa visão a se locomoverem sem sofrer com a luz acendendo de repente, usando PWM pra variar a intensidade aos poucos em vez de um brilho seco de ligado/desligado.</p>
+                            <div class="componentes">
+                                <span>Arduino Uno</span>
+                                <span>3× LED</span>
+                                <span>3× Resistor</span>
+                                <span>Protoboard</span>
+                                <span>Jumpers</span>
+                                <span>Saídas PWM</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Projeto 3: Led RGB -->
+                    <article class="projeto">
+                        <div class="projeto-midia">
+                            <div class="tela">
+                                <video src="videos/led-rgb.mp4" poster="videos/posters/led-rgb.jpg" controls muted loop playsinline preload="metadata"></video>
+                            </div>
+                        </div>
+                        <div class="projeto-texto">
+                            <span class="projeto-ref">REF. 03 / LED RGB</span>
+                            <h3>LED RGB</h3>
+                            <p>Um único LED RGB que muda de cor conforme giramos o potenciômetro, passando do vermelho ao azul por vários tons no caminho. O potenciômetro manda um valor variável pro Arduino, que converte essa leitura em intensidades diferentes pra cada cor do LED — o mesmo princípio de síntese aditiva (luz vermelha, verde e azul se somando) que vimos lá na pesquisa de Física.</p>
+                            <div class="componentes">
+                                <span>Arduino Uno</span>
+                                <span>LED RGB</span>
+                                <span>Potenciômetro</span>
+                                <span>Resistores</span>
+                                <span>Protoboard</span>
+                                <span>Jumpers</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Projeto 4: Semáforo -->
+                    <article class="projeto">
+                        <div class="projeto-midia">
+                            <div class="tela">
+                                <video src="videos/semaforo.mp4" poster="videos/posters/semaforo.jpg" controls muted loop playsinline preload="metadata"></video>
+                            </div>
+                        </div>
+                        <div class="projeto-texto">
+                            <span class="projeto-ref">REF. 04 / SEMÁFORO</span>
+                            <h3>Semáforo</h3>
+                            <p>Um semáforo em miniatura: os LEDs vermelho, amarelo e verde trocam de cor sozinhos, seguindo os tempos de um semáforo de verdade — vermelho mais longo, amarelo rápido, verde no meio. Todo o ciclo é controlado por tempo no código, sem sensor nenhum, só delays organizados na ordem certa. Montamos dois semáforos ao mesmo tempo na protoboard pra testar se o código dava conta de controlar mais de um conjunto de LEDs de uma vez.</p>
+                            <div class="componentes">
+                                <span>Arduino Uno</span>
+                                <span>6× LED</span>
+                                <span>Resistores</span>
+                                <span>Protoboard</span>
+                                <span>Jumpers</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Projeto 5: Ciclo da Luz -->
+                    <article class="projeto">
+                        <div class="projeto-midia">
+                            <div class="tela">
+                                <video src="videos/ciclo-da-luz.mp4" poster="videos/posters/ciclo-da-luz.jpg" controls muted loop playsinline preload="metadata"></video>
+                            </div>
+                        </div>
+                        <div class="projeto-texto">
+                            <span class="projeto-ref">REF. 05 / CICLO DA LUZ</span>
+                            <h3>Ciclo da Luz</h3>
+                            <p>Simulamos um ciclo de dia e noite: o Arduino vai trocando as cores dos LEDs de acordo com o tempo que passa, marcando períodos como se fossem manhã, tarde e noite. Cada fase dura alguns segundos, controlados por uma variável de duração no código — sem usar <code>delay()</code>, pra não travar o programa enquanto ele conta o tempo. É basicamente um relógio de 24 horas em miniatura, só que resumido em segundos e mostrado em luz.</p>
+                            <div class="componentes">
+                                <span>Arduino Uno</span>
+                                <span>LEDs coloridos</span>
+                                <span>Protoboard</span>
+                                <span>Jumpers</span>
+                                <span>Controle por millis()</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <hr class="divisor">
+
+        <!-- ================= FÍSICA E TECNOCIÊNCIA ================= -->
+        <section id="fisica">
+            <div class="wrap">
+                <span class="eyebrow">Física e Tecnociência</span>
+                <h2 class="section-heading">O que aprendemos sobre luz</h2>
+                <p class="section-lede">Enquanto os LEDs piscavam lá na protoboard, na aula de Física e Tecnociência a gente tava estudando por que eles piscam daquele jeito. Aqui vai um resumo do conteúdo que vimos — sem cara de resumo formal. Clique em cada card pra abrir.</p>
+
+                <div class="temas-grid">
+
+                    <!-- Espelhos -->
+                    <div class="tema-card">
+                        <div class="tema-icone">
+                            <svg viewBox="0 0 48 48"><rect x="10" y="7" width="9" height="34" rx="1.5"/><path d="M19 24 L38 24 M38 24 L31 17 M38 24 L31 31"/></svg>
+                        </div>
+                        <button class="tema-toggle" aria-expanded="false">
+                            <h3>Por que sua imagem no espelho parece "ao contrário"?</h3>
+                            <span class="tema-plus" aria-hidden="true">+</span>
+                        </button>
+                        <div class="tema-conteudo">
+                            <div class="tema-conteudo-inner">
+                                <span class="tema-label">Espelhos</span>
+                                <p class="tema-texto">Espelhos são superfícies bem polidas que refletem a luz de forma regular. A gente estudou a diferença entre espelhos planos — que formam imagens virtuais, diretas e do mesmo tamanho do objeto — e espelhos esféricos, côncavos e convexos, que formam imagens reais ou virtuais dependendo de onde o objeto está em relação ao foco.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Propriedades da Luz -->
+                    <div class="tema-card">
+                        <div class="tema-icone">
+                            <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="7"/><path d="M24 5v6M24 37v6M43 24h-6M11 24H5M36.5 11.5l-4.2 4.2M15.7 32.3l-4.2 4.2M36.5 36.5l-4.2-4.2M15.7 15.7l-4.2-4.2"/></svg>
+                        </div>
+                        <button class="tema-toggle" aria-expanded="false">
+                            <h3>A luz é onda ou partícula? As duas coisas, ao mesmo tempo.</h3>
+                            <span class="tema-plus" aria-hidden="true">+</span>
+                        </button>
+                        <div class="tema-conteudo">
+                            <div class="tema-conteudo-inner">
+                                <span class="tema-label">Propriedades da luz</span>
+                                <p class="tema-texto">Vimos os comportamentos fundamentais da luz ao se propagar e interagir com o ambiente: a propagação retilínea, a reflexão (quando a luz bate numa superfície e volta), a refração e a absorção. E entendemos que a luz se comporta ora como onda, ora como partícula — o fóton.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Refração -->
+                    <div class="tema-card">
+                        <div class="tema-icone">
+                            <svg viewBox="0 0 48 48"><path d="M8 32h32v6H8z" opacity="0"/><rect x="10" y="26" width="28" height="14" rx="1"/><path d="M14 6 L24 26 L20 40"/></svg>
+                        </div>
+                        <button class="tema-toggle" aria-expanded="false">
+                            <h3>Por que uma colher parece quebrada dentro de um copo d'água?</h3>
+                            <span class="tema-plus" aria-hidden="true">+</span>
+                        </button>
+                        <div class="tema-conteudo">
+                            <div class="tema-conteudo-inner">
+                                <span class="tema-label">Refração</span>
+                                <p class="tema-texto">A refração é o fenômeno em que a luz muda de velocidade e de direção ao passar de um meio transparente pra outro com densidade diferente — do ar pra água, por exemplo. Analisamos a Lei de Snell-Descartes e o índice de refração, entendendo por que objetos submersos parecem estar em outra posição e como surgem fenômenos como a miragem.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Luz e Cores -->
+                    <div class="tema-card">
+                        <div class="tema-icone">
+                            <svg viewBox="0 0 48 48"><circle cx="19" cy="20" r="11"/><circle cx="29" cy="20" r="11"/><circle cx="24" cy="29" r="11"/></svg>
+                        </div>
+                        <button class="tema-toggle" aria-expanded="false">
+                            <h3>Um objeto vermelho não tem nada de vermelho nele</h3>
+                            <span class="tema-plus" aria-hidden="true">+</span>
+                        </button>
+                        <div class="tema-conteudo">
+                            <div class="tema-conteudo-inner">
+                                <span class="tema-label">Luz e cores</span>
+                                <p class="tema-texto">A luz branca contém todas as cores do espectro visível, e a cor que um objeto "tem" depende só da luz que ele reflete — o resto ele absorve. Vimos também a diferença entre a síntese aditiva de cores (luz: vermelho, verde e azul se somando, o RGB do nosso LED) e a síntese subtrativa (pigmentos: CMYK).</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lentes -->
+                    <div class="tema-card">
+                        <div class="tema-icone">
+                            <svg viewBox="0 0 48 48"><path d="M24 6c7 5 7 31 0 36 -7-5-7-31 0-36Z"/><path d="M6 24h9M33 24h9"/></svg>
+                        </div>
+                        <button class="tema-toggle" aria-expanded="false">
+                            <h3>Convergente ou divergente? Depende de pra onde a luz quer ir.</h3>
+                            <span class="tema-plus" aria-hidden="true">+</span>
+                        </button>
+                        <div class="tema-conteudo">
+                            <div class="tema-conteudo-inner">
+                                <span class="tema-label">Lentes</span>
+                                <p class="tema-texto">Lentes são meios transparentes limitados por superfícies esféricas (ou uma esférica e outra plana) capazes de refratar a luz. Estudamos as lentes convergentes, que concentram os raios num ponto focal, e as divergentes, que espalham os raios — fundamentais pra corrigir problemas de visão e pro funcionamento de instrumentos ópticos.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Óptica do Olho Humano -->
+                    <div class="tema-card">
+                        <div class="tema-icone">
+                            <svg viewBox="0 0 48 48"><path d="M5 24c6-11 32-11 38 0 -6 11-32 11-38 0Z"/><circle cx="24" cy="24" r="6"/></svg>
+                        </div>
+                        <button class="tema-toggle" aria-expanded="false">
+                            <h3>Seu olho é uma câmera que existe há milhões de anos</h3>
+                            <span class="tema-plus" aria-hidden="true">+</span>
+                        </button>
+                        <div class="tema-conteudo">
+                            <div class="tema-conteudo-inner">
+                                <span class="tema-label">Óptica do olho humano</span>
+                                <p class="tema-texto">O olho humano funciona como um sistema óptico natural pra formar imagens. Vimos o papel da córnea, do cristalino (a lente natural que faz a acomodação visual) e da retina, além dos principais defeitos de visão — miopia, hipermetropia, astigmatismo e presbiopia — e como as lentes corrigem cada um deles.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Smartphones e Acessibilidade -->
+                    <div class="tema-card">
+                        <div class="tema-icone">
+                            <svg viewBox="0 0 48 48"><rect x="14" y="5" width="20" height="38" rx="4"/><path d="M21 39h6"/></svg>
+                        </div>
+                        <button class="tema-toggle" aria-expanded="false">
+                            <h3>A óptica que você estuda na escola já tá no seu bolso</h3>
+                            <span class="tema-plus" aria-hidden="true">+</span>
+                        </button>
+                        <div class="tema-conteudo">
+                            <div class="tema-conteudo-inner">
+                                <span class="tema-label">Smartphones e acessibilidade visual</span>
+                                <p class="tema-texto">Conectamos os conceitos de óptica com a tecnologia que a gente usa todo dia: leitores de tela, lupas digitais, ajuste de contraste, comandos de voz e inteligência artificial nos smartphones ajudam pessoas com baixa visão ou cegueira a terem mais autonomia no dia a dia — meio que a mesma lógica do nosso projeto de fade-out pra acessibilidade lá em cima.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p class="footer-titulo">Desenvolvido por</p>
+        <ul class="integrantes-lista">
+            <li>Artur Francisco Bariviera Tonial</li>
+            <li>Natalha Stein</li>
+            <li>Mariana Junges Castoldi</li>
+            <li>Bianca Maria Detoni Martins</li>
+        </ul>
+        <p class="copy">&copy; <span id="ano-atual"></span> — Trabalho Escolar, Colégio Estadual de Marmeleiro. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Ano atual no rodapé
+        document.getElementById('ano-atual').textContent = new Date().getFullYear();
+
+        // Cards de Física e Tecnociência: abrir/fechar ao clicar
+        document.querySelectorAll('.tema-toggle').forEach(function (botao) {
+            botao.addEventListener('click', function () {
+                var card = botao.closest('.tema-card');
+                var aberto = card.classList.toggle('aberto');
+                botao.setAttribute('aria-expanded', aberto ? 'true' : 'false');
+            });
+        });
+    </script>
+
+</body>
+</html>
